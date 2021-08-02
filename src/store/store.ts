@@ -1,17 +1,12 @@
-import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
-import {
-  persistStore,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from "redux-persist";
-import rootReducer from "@/store/reducers";
+import {configureStore,} from '@reduxjs/toolkit';
 
-export const store: EnhancedStore = configureStore({
-  reducer: rootReducer,
+import {FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE,} from 'redux-persist';
+import rootReducer, {persistConfig, RootState} from '@/store/reducers';
+
+const persistedReducer = persistReducer<RootState>(persistConfig, rootReducer);
+
+export const store = configureStore({
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -19,5 +14,7 @@ export const store: EnhancedStore = configureStore({
       },
     }),
 });
+
+export type AppDispatch = typeof store.dispatch;
 
 export const persistor = persistStore(store);

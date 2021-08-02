@@ -1,30 +1,34 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
+import {combineReducers} from '@reduxjs/toolkit';
+import {persistReducer} from 'redux-persist';
+import {PersistConfig} from 'redux-persist/es/types';
+import storage from 'redux-persist/lib/storage';
 
 /**
  * Slices
  */
-import userSlice from "@/store/slices/userSlice";
-import { WebStorage } from "redux-persist/es/types";
+import userSlice from '@/modules/user/userSlice';
 
 /**
  *
  * @type {{storage, whitelist: *[], key: string}}
  */
-
-interface persistUserConfigI {
-  key: string;
-  storage: WebStorage;
-  whitelist: string[];
-}
-
-const persistUserConfig: persistUserConfigI = {
-  key: "root",
+export const persistConfig: PersistConfig<RootState> = {
+  key: 'root',
   storage: storage,
   whitelist: [],
 };
 
-export default combineReducers({
-  userReducer: persistReducer(persistUserConfig, userSlice),
+//TODO: Check this
+const persistUser = {
+  key: 'auth',
+  storage: storage,
+  whitelist: ['token'],
+}
+
+
+const rootReducer = combineReducers({
+  userReducer: persistReducer(persistUser, userSlice),
 });
+
+export type RootState = ReturnType<typeof rootReducer>
+export default rootReducer;
