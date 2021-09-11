@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87b09336-52e5-4656-b36b-ad68666328ed" name="Default Changelist" comment="upgrading project dependencies and added next-redux-wrapper">
-      <change afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
+    <list default="true" id="87b09336-52e5-4656-b36b-ad68666328ed" name="Default Changelist" comment="rn eslint config">
       <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +151,8 @@
       <workItem from="1627572098862" duration="12276000" />
       <workItem from="1627863112198" duration="3641000" />
       <workItem from="1631346055936" duration="2073000" />
-      <workItem from="1631348143763" duration="560000" />
+      <workItem from="1631348143763" duration="835000" />
+      <workItem from="1631348986894" duration="117000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1627414908759</created>
@@ -169,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631347132055</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="rn eslint config">
+      <created>1631348717610</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631348717610</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +197,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
     <MESSAGE value="upgrading project dependencies and added next-redux-wrapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrading project dependencies and added next-redux-wrapper" />
+    <MESSAGE value="rn eslint config" />
+    <option name="LAST_COMMIT_MESSAGE" value="rn eslint config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
