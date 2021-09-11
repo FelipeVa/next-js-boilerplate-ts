@@ -1,8 +1,8 @@
-import "@/styles/globals.css";
-import { Provider } from "react-redux";
-import { store, persistor } from "@/store/store";
-import { PersistGate } from "redux-persist/integration/react";
-import { AppProps } from "next/dist/next-server/lib/router/router";
+import '@/styles/globals.css';
+import {Provider} from 'react-redux';
+import {persistor, store, wrapper} from '@/store/store';
+import {PersistGate} from 'redux-persist/integration/react';
+import {AppProps} from 'next/dist/next-server/lib/router/router';
 
 /**
  * Main Component
@@ -21,4 +21,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

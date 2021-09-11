@@ -1,6 +1,6 @@
 import {combineReducers} from '@reduxjs/toolkit';
 import {persistReducer} from 'redux-persist';
-import {PersistConfig} from 'redux-persist/es/types';
+import {PersistConfig, WebStorage} from 'redux-persist/es/types';
 import storage from 'redux-persist/lib/storage';
 
 /**
@@ -12,23 +12,30 @@ import userSlice from '@/modules/user/userSlice';
  *
  * @type {{storage, whitelist: *[], key: string}}
  */
-export const persistConfig: PersistConfig<RootState> = {
+interface PersistInterface {
+  key: string;
+  storage: WebStorage;
+  whitelist?: string[];
+  blacklist?: string[];
+}
+
+export const persistRootConfig: PersistConfig<RootState> = {
   key: 'root',
   storage: storage,
   whitelist: [],
 };
 
-//TODO: Check this
-const persistUser = {
+const persistUser: PersistInterface = {
   key: 'auth',
   storage: storage,
   whitelist: ['token'],
 }
 
-
-const rootReducer = combineReducers({
+const combineRedux = combineReducers({
   userReducer: persistReducer(persistUser, userSlice),
 });
+
+const rootReducer = combineRedux;
 
 export type RootState = ReturnType<typeof rootReducer>
 export default rootReducer;
